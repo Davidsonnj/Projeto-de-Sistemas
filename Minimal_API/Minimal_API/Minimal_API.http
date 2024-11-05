@@ -1,0 +1,32 @@
+@Minimal_API_HostAddress = http://localhost:5000
+
+
+### Criar uma nova pessoa
+POST {{Minimal_API_HostAddress}}/pessoas
+Content-Type: application/json
+
+{
+  "nome": "Jorge",
+  "idade": 17,
+  "email": "jorge@email.com"
+}
+
+### Criar um endereço para a pessoa com ID 1
+POST {{Minimal_API_HostAddress}}/pessoa/1/enderecos
+Content-Type: application/json
+
+{
+  "logradouro": "Jardim Jardinado",
+  "numero": "42",
+  "estado": "Holy Spirit",
+  "cidade": "Serra",
+  "bairro": "Oceania"
+}
+
+### Obter informações da pessoa com ID 1
+GET {{Minimal_API_HostAddress}}/pessoas/1
+Content-Type: application/json
+
+### Obter informações do endereço com ID 1 para a pessoa com ID 1
+GET {{Minimal_API_HostAddress}}/pessoa/1/enderecos/1
+Content-Type: application/json
